@@ -30,7 +30,6 @@ public class BankController {
     }
 
     public void createNewAccount() {
-        // Przykładowe dane do tworzenia konta
         String accountNumber = "123456789";
         BigDecimal initialBalance = new BigDecimal("1000.00");
         BigDecimal fee = new BigDecimal("5.00");
