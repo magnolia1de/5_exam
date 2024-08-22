@@ -1,6 +1,7 @@
 package edu.technischools.java.web;
 
 import edu.technischools.java.model.Account;
+import edu.technischools.java.model.BasicAccount;
 import edu.technischools.java.model.Client;
 import edu.technischools.java.model.Currency;
 import edu.technischools.java.model.Transaction;
@@ -33,10 +34,14 @@ public class BankController {
         String accountNumber = "123456789";
         BigDecimal initialBalance = new BigDecimal("1000.00");
         BigDecimal fee = new BigDecimal("5.00");
+        
+        BasicAccount account = new BasicAccount(accountNumber, Currency.EUR, "przelew");
+        account.setBalance(initialBalance);
+        account.setFee(fee);
+        
+        accountService.createAccount(account);
 
-        Account newAccount = accountService.createAccount(accountNumber, Currency.EUR ,"przelew" , fee);
-
-        System.out.println("Utworzono nowe konto: " + newAccount.getAccountNumber());
+        System.out.println("Utworzono nowe konto: " + account.getAccountNumber());
     }
 
     @PostMapping("/addClient")

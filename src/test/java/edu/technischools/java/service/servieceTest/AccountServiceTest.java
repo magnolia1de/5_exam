@@ -56,6 +56,6 @@ public class AccountServiceTest {
         accountService.createAccount(freeAccount);
 
         assertEquals(new BigDecimal("0.5"), premiumAccount.getFee());
-        assertEquals(new BigDecimal("0.0"), freeAccount.getFee());
+        assertEquals(new BigDecimal("0"), freeAccount.getFee());
     }
 }

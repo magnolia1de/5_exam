@@ -73,6 +73,6 @@ public class ClientServiceTest {
         client.setAddress(new Address("New Street", "New City", "33333"));
         clientService.updateClient(client);
 
-        assertEquals("New Street", clientService.findClientById("1").get().getAddress().getClass());
+        assertEquals("New Street", clientService.findClientById("1").get().getAddress().getStreet());
     }
 }
